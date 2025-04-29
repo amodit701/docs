@@ -1,0 +1,118 @@
+---
+title: 'GitHub Integration'
+description: 'Set up webhooks to receive repository events from GitHub'
+---
+
+import { IntegrationStep } from '@/components/IntegrationStep'
+import { ImportantNote } from '@/components/ImportantNote'
+import { CodeSnippet } from '@/components/CodeSnippet'
+import { Screenshot } from '@/components/Screenshot'
+
+# GitHub Integration
+
+Set up webhooks to receive repository events from GitHub.
+
+## Prerequisites
+
+- A GitHub account
+- Admin access to the GitHub repository or organization
+
+## Integration Steps
+
+<IntegrationStep number={1} title="Access GitHub Repository Settings">
+  Navigate to your GitHub repository and click on **Settings**.
+  
+  <ImportantNote>
+    You can set up webhooks at the repository level or at the organization level. This guide focuses on repository-level webhooks.
+  </ImportantNote>
+  
+  <Screenshot 
+    src="/images/integrations/github/repo-settings.png" 
+    alt="GitHub Repository Settings" 
+    caption="Access repository settings" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={2} title="Navigate to Webhooks" isImportant={true}>
+  In the left sidebar, click on **Webhooks**.
+  
+  <Screenshot 
+    src="/images/integrations/github/webhooks-nav.png" 
+    alt="GitHub Webhooks" 
+    caption="Navigate to Webhooks in the sidebar" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={3} title="Add Webhook">
+  Click the **Add webhook** button.
+  
+  <Screenshot 
+    src="/images/integrations/github/add-webhook.png" 
+    alt="Add Webhook" 
+    caption="Add a new webhook button" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={4} title="Configure Webhook Settings" isImportant={true}>
+  Fill in the webhook configuration with the following details:
+
+  1. **Payload URL:** Enter your webhook URL from our platform
+  
+  <CodeSnippet>
+    https://your-webhook-domain.com/api/integrations/github
+  </CodeSnippet>
+  
+  2. **Content type:** Select `application/json`
+  3. **Secret:** Create a secure secret and enter it here. You'll need to add this same secret to our platform.
+  4. **SSL verification:** Keep this enabled for security
+  5. **Which events would you like to trigger this webhook?** Choose from:
+     - Just the push event
+     - Send me everything
+     - Let me select individual events (recommended)
+  
+  <Screenshot 
+    src="/images/integrations/github/webhook-config.png" 
+    alt="Webhook configuration" 
+    caption="Configure your webhook settings" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={5} title="Select Events" isImportant={true}>
+  If you selected "Let me select individual events," choose the specific events you want to receive. Common events include:
+  
+  - Push
+  - Pull requests
+  - Issues
+  - Releases
+  - Discussions
+  
+  <Screenshot 
+    src="/images/integrations/github/select-events.png" 
+    alt="Select Events" 
+    caption="Select the events to trigger your webhook" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={6} title="Add the Webhook">
+  Click the **Add webhook** button to create your webhook.
+  
+  <Screenshot 
+    src="/images/integrations/github/add-webhook-button.png" 
+    alt="Add Webhook Button" 
+    caption="Add the webhook to complete setup" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={7} title="Test and Monitor the Webhook">
+  GitHub provides a way to view recent deliveries and redeliver webhooks for testing. You can also see the response status and details for each delivery.
+  
+  <Screenshot 
+    src="/images/integrations/github/webhook-deliveries.png" 
+    alt="Webhook Deliveries" 
+    caption="Monitor webhook delivery history" 
+  />
+</IntegrationStep>
+
+## Need Help?
+
+If you encounter any issues setting up your GitHub integration, please refer to our [troubleshooting guide](/docs/troubleshooting) or [contact support](mailto:support@hookflo.dev).

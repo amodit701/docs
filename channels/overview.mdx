@@ -1,0 +1,47 @@
+---
+title: 'Notification Channels Overview'
+description: 'Configure how and where you receive webhook notifications'
+---
+
+# Notification Channels
+
+Hookflo allows you to route webhook events to different notification channels. This enables you to receive notifications in the way that works best for your team and workflow.
+
+## Available Channels
+
+Hookflo currently supports the following notification channels:
+
+### Communication Channels
+
+- [Email](/channels/email) - Receive webhook notifications via email
+- [Slack](/channels/slack) - Get webhook notifications in your Slack channels
+
+## Channel Features
+
+All Hookflo notification channels include:
+
+- **Event Filtering**: Specify which events should be sent to each channel
+- **Customizable Formatting**: Control how notifications appear in each channel
+- **Delivery Scheduling**: Choose when to receive notifications (immediate, digest, or scheduled)
+- **Failure Handling**: Automatic retries ensure notifications are delivered
+
+## Coming Soon
+
+We're constantly adding new notification channels. Here are some channels we're working on:
+
+- Microsoft Teams
+- Discord
+- SMS (via Twilio)
+- Push Notifications
+
+Don't see a channel you need? [Contact us](mailto:support@hookflo.dev) to request a new notification channel.
+
+## Channel Configuration
+
+Each notification channel can be configured independently. You can set up multiple instances of the same channel type with different configurations. For example, you might want to:
+
+- Send critical alerts to one Slack channel and informational updates to another
+- Email certain team members about specific events
+- Create digests for routine updates while sending immediate notifications for urgent events
+
+See the individual channel documentation for specific configuration options.

@@ -1,0 +1,113 @@
+---
+title: 'Stripe Integration'
+description: 'Set up webhooks to receive payment and subscription events from Stripe'
+---
+
+import { IntegrationStep } from '@/components/IntegrationStep'
+import { ImportantNote } from '@/components/ImportantNote'
+import { CodeSnippet } from '@/components/CodeSnippet'
+import { Screenshot } from '@/components/Screenshot'
+
+# Stripe Integration
+
+Set up webhooks to receive payment and subscription events from Stripe.
+
+## Prerequisites
+
+- A Stripe account
+- Admin access to your Stripe dashboard
+
+## Integration Steps
+
+<IntegrationStep number={1} title="Access the Stripe Dashboard">
+  Log in to your Stripe dashboard at [dashboard.stripe.com](https://dashboard.stripe.com).
+  
+  <Screenshot 
+    src="/images/integrations/stripe/dashboard.png" 
+    alt="Stripe Dashboard" 
+    caption="Stripe dashboard home" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={2} title="Navigate to Webhooks" isImportant={true}>
+  In the left sidebar, click on **Developers**, then select **Webhooks**.
+  
+  <Screenshot 
+    src="/images/integrations/stripe/webhooks-nav.png" 
+    alt="Stripe Webhooks" 
+    caption="Navigate to Developers → Webhooks in the sidebar" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={3} title="Add Endpoint">
+  Click the **Add endpoint** button.
+  
+  <Screenshot 
+    src="/images/integrations/stripe/add-endpoint.png" 
+    alt="Add Endpoint" 
+    caption="Add a new webhook endpoint" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={4} title="Configure Webhook Settings" isImportant={true}>
+  Fill in the webhook configuration with the following details:
+
+  1. **Endpoint URL:** Enter your webhook URL from our platform
+  
+  <CodeSnippet>
+    https://your-webhook-domain.com/api/integrations/stripe
+  </CodeSnippet>
+  
+  2. **Events to send:** Select the events you want to receive. Common events include:
+     - checkout.session.completed
+     - customer.subscription.created
+     - customer.subscription.updated
+     - invoice.paid
+     - payment_intent.succeeded
+  
+  3. **Version:** Select the latest API version
+  
+  <Screenshot 
+    src="/images/integrations/stripe/webhook-config.png" 
+    alt="Webhook configuration" 
+    caption="Configure your webhook settings" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={5} title="Get Webhook Signing Secret" isImportant={true}>
+  After creating the webhook, Stripe will generate a signing secret. Click **Reveal** to view it, then copy this secret and add it to our platform.
+  
+  <ImportantNote>
+    The webhook signing secret is used to verify that webhook requests are coming from Stripe. Store this secret securely and never expose it in client-side code.
+  </ImportantNote>
+  
+  <Screenshot 
+    src="/images/integrations/stripe/signing-secret.png" 
+    alt="Signing Secret" 
+    caption="Copy the signing secret for verification" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={6} title="Test the Integration">
+  Stripe provides a way to test your webhook by sending test events. Click **Send test webhook** and select an event type to test.
+  
+  <Screenshot 
+    src="/images/integrations/stripe/test-webhook.png" 
+    alt="Test Webhook" 
+    caption="Send a test webhook event" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={7} title="Monitor Webhook Deliveries">
+  Stripe provides a detailed log of webhook attempts. You can use this to monitor successful deliveries and troubleshoot any failures.
+  
+  <Screenshot 
+    src="/images/integrations/stripe/webhook-logs.png" 
+    alt="Webhook Logs" 
+    caption="Monitor webhook delivery logs" 
+  />
+</IntegrationStep>
+
+## Need Help?
+
+If you encounter any issues setting up your Stripe integration, please refer to our [troubleshooting guide](/docs/troubleshooting) or [contact support](mailto:support@hookflo.dev).
