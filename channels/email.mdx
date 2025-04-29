@@ -1,0 +1,107 @@
+---
+title: 'Email Notification Channel'
+description: 'Set up email notifications for your webhook events'
+---
+
+import { IntegrationStep } from '@/components/IntegrationStep'
+import { ImportantNote } from '@/components/ImportantNote'
+import { CodeSnippet } from '@/components/CodeSnippet'
+import { Screenshot } from '@/components/Screenshot'
+
+# Email Notification Channel
+
+Set up email notifications for your webhook events.
+
+## Prerequisites
+
+- An active account on our platform
+- At least one webhook integration set up
+
+## Configuration Steps
+
+<IntegrationStep number={1} title="Access Notification Settings">
+  Navigate to your account dashboard and click on **Notification Channels**.
+  
+  <Screenshot 
+    src="/images/channels/email/notification-channels.png" 
+    alt="Notification Channels" 
+    caption="Access notification channel settings" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={2} title="Add Email Channel" isImportant={true}>
+  Click on **Add Channel** and select **Email** from the dropdown menu.
+  
+  <Screenshot 
+    src="/images/channels/email/add-email-channel.png" 
+    alt="Add Email Channel" 
+    caption="Add a new email notification channel" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={3} title="Configure Email Settings">
+  Fill in the email configuration with the following details:
+
+  1. **Channel Name:** Give your email channel a descriptive name (e.g., "Critical Alerts")
+  2. **Recipients:** Add one or more email addresses that should receive notifications
+  3. **Email Template:** Choose a template for your email notifications or use the default
+  
+  <Screenshot 
+    src="/images/channels/email/email-configuration.png" 
+    alt="Email Configuration" 
+    caption="Configure your email notification settings" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={4} title="Set Notification Rules" isImportant={true}>
+  Define which webhook events should trigger email notifications:
+
+  1. **Select Integrations:** Choose which webhook integrations should send notifications to this email channel
+  2. **Event Types:** Specify which event types should trigger notifications (e.g., all events, only errors, specific event types)
+  3. **Frequency:** Choose how often to receive notifications (e.g., immediately, digest, daily summary)
+  
+  <Screenshot 
+    src="/images/channels/email/notification-rules.png" 
+    alt="Notification Rules" 
+    caption="Set up notification rules for your email channel" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={5} title="Customize Email Content">
+  Customize the content of your email notifications:
+
+  1. **Subject Line:** Define a custom subject line format
+  2. **Email Body:** Customize the email body template
+  3. **Include Data:** Choose which webhook data to include in the email
+  
+  <Screenshot 
+    src="/images/channels/email/email-customization.png" 
+    alt="Email Customization" 
+    caption="Customize your email notification content" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={6} title="Save and Test">
+  Save your email channel configuration and send a test notification to verify it's working correctly.
+  
+  <Screenshot 
+    src="/images/channels/email/test-email.png" 
+    alt="Test Email" 
+    caption="Send a test email notification" 
+  />
+</IntegrationStep>
+
+## Email Templates
+
+Hookflo provides several pre-built email templates:
+
+- **Standard** - A clean, simple layout suitable for most notifications
+- **Detailed** - Includes full event payload and metadata
+- **Compact** - Minimalist design with just the essential information
+- **Alert** - High-visibility design for critical notifications
+
+You can also create custom templates using our template editor.
+
+## Need Help?
+
+If you encounter any issues setting up your email notifications, please refer to our [troubleshooting guide](/docs/troubleshooting) or [contact support](mailto:support@hookflo.dev).

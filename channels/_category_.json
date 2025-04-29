@@ -1,0 +1,8 @@
+{
+  "label": "Notification Channels",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Configure how and where you receive webhook notifications"
+  }
+}

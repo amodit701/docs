@@ -1,0 +1,75 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Hookflo Documentation",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#3B82F6",
+    "light": "#3B82F6",
+    "dark": "#3B82F6",
+    "anchors": {
+      "from": "#3B82F6",
+      "to": "#1E40AF"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:support@hookflo.dev"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Dashboard",
+    "url": "https://dashboard.hookflo.dev"
+  },
+  "tabs": [
+    {
+      "name": "API Reference",
+      "url": "api-reference"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Community",
+      "icon": "discord",
+      "url": "https://discord.gg/hookflo"
+    },
+    {
+      "name": "Blog",
+      "icon": "newspaper",
+      "url": "https://hookflo.dev/blog"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": ["index"]
+    },
+    {
+      "group": "Documentation",
+      "pages": ["docs/overview", "docs/security", "docs/troubleshooting"]
+    },
+    {
+      "group": "Platform Integrations",
+      "pages": [
+        "integrations/overview",
+        "integrations/supabase",
+        "integrations/clerk",
+        "integrations/stripe",
+        "integrations/github"
+      ]
+    },
+    {
+      "group": "Notification Channels",
+      "pages": ["channels/overview", "channels/email", "channels/slack"]
+    }
+  ],
+  "footerSocials": {
+    "twitter": "https://twitter.com/hookflo",
+    "github": "https://github.com/hookflo",
+    "linkedin": "https://linkedin.com/company/hookflo"
+  }
+}

@@ -1,0 +1,115 @@
+---
+title: 'Supabase Integration'
+description: 'Set up webhooks to receive real-time events from your Supabase project'
+---
+
+import { IntegrationStep } from '@/components/IntegrationStep'
+import { ImportantNote } from '@/components/ImportantNote'
+import { CodeSnippet } from '@/components/CodeSnippet'
+import { Screenshot } from '@/components/Screenshot'
+
+# Supabase Integration
+
+Set up webhooks to receive real-time events from your Supabase project.
+
+## Prerequisites
+
+- A Supabase account and project
+- Admin access to your Supabase project
+
+## Integration Steps
+
+<IntegrationStep number={1} title="Access the Supabase Dashboard">
+  Log in to your Supabase account and select the project you want to integrate with.
+  
+  <Screenshot 
+    src="/images/integrations/supabase/dashboard.png" 
+    alt="Supabase Dashboard" 
+    caption="Supabase project dashboard" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={2} title="Navigate to Database Webhooks" isImportant={true}>
+  In the left sidebar, click on **Database**, then select **Webhooks**.
+  
+  <Screenshot 
+    src="/images/integrations/supabase/webhooks-nav.png" 
+    alt="Supabase Database Webhooks" 
+    caption="Navigate to Database → Webhooks in the sidebar" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={3} title="Create a New Webhook">
+  Click the **Create a new webhook** button.
+  
+  <Screenshot 
+    src="/images/integrations/supabase/create-webhook.png" 
+    alt="Create new webhook" 
+    caption="Create a new webhook button" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={4} title="Configure Webhook Settings" isImportant={true}>
+  Fill in the webhook configuration with the following details:
+
+  1. **Name:** Give your webhook a descriptive name (e.g., "User Events")
+  2. **Table:** Select the database table you want to monitor for changes
+  3. **Events:** Choose which events to trigger the webhook (INSERT, UPDATE, DELETE)
+  4. **URL:** Enter your webhook URL from our platform
+  
+  <CodeSnippet>
+    https://your-webhook-domain.com/api/integrations/supabase
+  </CodeSnippet>
+  
+  <Screenshot 
+    src="/images/integrations/supabase/webhook-config.png" 
+    alt="Webhook configuration" 
+    caption="Configure your webhook settings" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={5} title="Add HTTP Headers">
+  Add the following HTTP headers to secure your webhook:
+  
+  **Authorization Header:**
+  
+  <CodeSnippet>
+    Authorization: Bearer YOUR_WEBHOOK_SECRET
+  </CodeSnippet>
+  
+  **Content-Type Header:**
+  
+  <CodeSnippet>
+    Content-Type: application/json
+  </CodeSnippet>
+  
+  <ImportantNote>
+    Replace `YOUR_WEBHOOK_SECRET` with the secret token generated in our platform. This token is used to verify that the webhook request is coming from Supabase.
+  </ImportantNote>
+</IntegrationStep>
+
+<IntegrationStep number={6} title="Enable the Webhook">
+  Toggle the webhook to **Enabled** and click **Save**.
+  
+  <Screenshot 
+    src="/images/integrations/supabase/enable-webhook.png" 
+    alt="Enable webhook" 
+    caption="Enable the webhook and save your configuration" 
+  />
+</IntegrationStep>
+
+<IntegrationStep number={7} title="Test the Integration">
+  Make a change to the selected table to trigger the webhook and verify it's working correctly.
+  
+  You can check the webhook delivery status in the Supabase dashboard under the Webhooks section.
+  
+  <Screenshot 
+    src="/images/integrations/supabase/webhook-logs.png" 
+    alt="Webhook logs" 
+    caption="Webhook delivery logs in Supabase" 
+  />
+</IntegrationStep>
+
+## Need Help?
+
+If you encounter any issues setting up your Supabase integration, please refer to our [troubleshooting guide](/docs/troubleshooting) or [contact support](mailto:support@hookflo.dev).
